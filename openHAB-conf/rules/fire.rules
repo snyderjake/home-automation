@@ -1,0 +1,14 @@
+//Call fireplace when alexa activates "Fire"
+rule "Fire"
+when 
+	Item Fire received command ON
+then
+	Fireplace.sendCommand(ON)
+end
+
+rule "Fire"
+when 
+	Item Fire received command OFF
+then
+	Fireplace.sendCommand(OFF)
+end

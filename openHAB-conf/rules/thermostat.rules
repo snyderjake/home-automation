@@ -1,0 +1,13 @@
+rule "Fan ON"
+when
+	Item HVAC_Fan received command ON
+then
+	sendHttpPostRequest("http://192.168.8.10/tstat", "application/json", '{"fmode":2}')
+end
+
+rule "Fan OFF"
+when
+	Item HVAC_Fan received command OFF
+then
+	sendHttpPostRequest("http://192.168.8.10/tstat", "application/json", '{"fmode":0}')
+end

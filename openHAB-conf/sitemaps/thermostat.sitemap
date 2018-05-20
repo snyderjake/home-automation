@@ -1,0 +1,8 @@
+sitemap house label="Thermostat"
+{
+  	Text item=Tstat_temp icon="thermostat" 
+	Switch item=Tstat_mode       mappings=[0="Off", 1="Heat", 2="Cool"]   icon="thermometer"  
+	Setpoint item=Tstat_Setpoint minValue=60 maxValue=80 step=1.0
+	Switch item=Tstat_hold       mappings=[0="No", 1="Yes"]  
+	Switch item=Tstat_fan        mappings=[0="Auto", 2="On"]   icon="fan"  
+}

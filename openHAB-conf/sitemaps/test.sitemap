@@ -1,0 +1,27 @@
+sitemap test label="Jatiecake's House <3" {
+
+    Frame label="Living Room" {
+        Switch item=Fireplace icon="light"
+        Text item=LRTemp label="Livingroom"
+        Switch item=HVAC_Fan
+        Switch item=TP_O_Outlet icon="light" 
+        }
+
+    Frame label="Bedroom" {
+        Switch item=TP_L_Switch icon="light"
+        Slider item=TP_LB_Bulb label="Brightness"
+        Text item=TP_L_RSSI
+
+        Group item=WakeUpAlarm label="Wake up Alarm" icon="clock" {
+           Setpoint item=WakeUpHour minValue=0 maxValue=23 step=1
+           Setpoint item=WakeUpMinute minValue=0 maxValue=59 step=1
+           Setpoint item=WakeUpDimStep minValue=1 maxValue=100 step=1
+           Setpoint item=WakeUpTimeStep minValue=1 maxValue=60 step=1
+           Switch item=WakeUpAlarmSwitch
+           Text item=WakeUpAlarmTriggered
+           }
+
+        }
+
+
+    }

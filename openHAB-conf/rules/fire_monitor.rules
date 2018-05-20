@@ -1,0 +1,32 @@
+//Stamp time when fire was turned on
+rule "Fire Logger"
+when
+    Item Fireplace changed to ON
+then
+    logInfo("LOG", "Fire change detected")
+    postUpdate(FireOnStamp, new DateTimeType())
+end
+
+//Check every minute to see how long it has been since fire turned on
+rule "Fire Monitor"
+when
+    Time cron "0 0/1 * * * ?"
+then
+    if(now.minusMinutes(5).isBefore((FireOnStamp.state as DateTimeType).calendar.timeInMillis)) {
+        //logInfo("LOG","Fire has been on 5+ minutes")
+        }
+    else{
+        //logInfo("LOG","Fire less than 5 min")
+        }
+end
+
+//Reset fire timestamp and store total run time
+rule "Fire Time Reset"
+when Item Fireplace changed to OFF
+then
+    logInfo("LOG", "Fire OFF detected")
+    var int runtime = (FireOnStamp.state as DateTimeType).calendar.timeInMillis - new DateTimeType()
+    logInfo("LOG", "runtime:" + runtime)
+    //postUpdate(FireOnStamp,NULL)
+end
+

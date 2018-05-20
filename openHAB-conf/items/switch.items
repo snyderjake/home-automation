@@ -1,0 +1,2 @@
+Switch Fireplace "Fireplace" [ "Switchable" ] {mqtt=">[ohPiBroker:/test/relay:command:ON:1],>[ohPiBroker:/test/relay:command:OFF:0]"}
+Switch Fire "Fire" [ "Switchable"]

@@ -1,0 +1,10 @@
+Number LRTemp "temp [%.1f °F]" { http="<[tstat:30000:JSONPATH($.temp)]" }
+Number Tstat_mode "System Status" { http="<[tstat:30000:JSONPATH($.tmode)]" }
+Number Tstat_temp "Indoor Temp [%.1f °F]" { http="<[tstat:30000:JSONPATH($.temp)]" }
+Number Tstat_SetpointH "Set Heat Temperature [%.1f °F]" { http="<[tstat:30000:JSONPATH($.t_heat)]" }
+Number Tstat_SetpointC "Set A/C Temperature [%.1f °F]" { http="<[tstat:30000:JSONPATH($.t_cool)]" }
+Number Tstat_Setpoint "Set Temperature [%.1f °F]" 
+Number Tstat_hold "Hold Status" { http="<[tstat:30000:JSONPATH($.hold)]" }
+Number Tstat_fan "Fan Mode" { http="<[tstat:30000:JSONPATH($.fmode)]" }
+DateTime Tstat_LastUpdate "Last contact [%1$tm-%1$td @ %1$tH:%1$tM]"
+Switch HVAC_Fan "fan" ["Switchable"]

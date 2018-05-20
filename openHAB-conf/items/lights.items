@@ -1,0 +1,6 @@
+Switch   TP_L_Switch  "Light" ["Switchable"]{channel="tplinksmarthome:lb100:home:switch" }
+Number   TP_L_RSSI    "Signal [%d] dB" <signal> { channel="tplinksmarthome:lb100:home:rssi" }
+Dimmer   TP_LB_Bulb   "Bedroom Light" ["Lighting"] {channel="tplinksmarthome:lb100:home:brightness" }
+
+Switch 	 TP_O_Outlet	"Christmas Magic" ["Switchable"]{channel = "tplinksmarthome:hs100:home:switch"}
+Number 	 TP_O_RSSI		"Signal [%d] dB" <signal> {channel = "tplinksmarthome:hs100:home:rssi"}

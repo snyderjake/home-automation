@@ -1,0 +1,2 @@
+tplinksmarthome:lb100:home "Bedroom Light" [ ipAddress="192.168.8.11", transitionPeriod=1500]
+tplinksmarthome:hs100:home "Christmas Magic" [ipAddress="192.168.8.12"]
